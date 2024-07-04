@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../ui/beranda.dart';
 import '../ui/login.dart';
 import '../ui/poli_page.dart';
+import '../ui/pegawai_page.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
@@ -12,14 +13,14 @@ class Sidebar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text("Admin"),
-            accountEmail: Text("admin@admin.com")),
+              accountName: Text("Admin"),
+              accountEmail: Text("admin@admin.com")),
           ListTile(
             leading: Icon(Icons.home),
             title: Text("Beranda"),
             onTap: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Beranda()));
+                  context, MaterialPageRoute(builder: (context) => Beranda()));
             },
           ),
           ListTile(
@@ -27,18 +28,16 @@ class Sidebar extends StatelessWidget {
             title: Text("Poli"),
             onTap: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => PoliPage()));
+                  context, MaterialPageRoute(builder: (context) => PoliPage()));
             },
           ),
           ListTile(
             leading: Icon(Icons.people),
             title: Text("Pegawai"),
-            onTap: () {},
-          ),
-          ListTile(
-          leading: Icon(Icons.account_box_sharp),
-          title: Text("Pasien"),
-          onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PegawaiPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout_rounded),
